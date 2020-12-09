@@ -38,7 +38,18 @@ class ScanQRCodeController: UIViewController, QRCodeReaderViewControllerDelegate
 
       // Or by using the closure pattern
       readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-        print(result)
+        
+        let resultMessage = result?.value
+        
+        let alertView = UIAlertController(title: "Result", message: resultMessage, preferredStyle: UIAlertController.Style.alert)
+        
+        alertView.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: { _ in //to be discussed
+            
+        }))
+        
+        self.present(alertView , animated: true, completion: nil)
+        
+        print(result!)
       }
 
       // Presents the readerVC as modal form sheet
