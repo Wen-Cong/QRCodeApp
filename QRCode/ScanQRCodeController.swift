@@ -49,7 +49,7 @@ class ScanQRCodeController: UIViewController, QRCodeReaderViewControllerDelegate
         
         self.present(alertView , animated: true, completion: nil)
         
-        print(result!)
+        print(result)
       }
 
       // Presents the readerVC as modal form sheet
